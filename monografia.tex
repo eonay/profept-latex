@@ -1,0 +1,112 @@
+%
+%================================================================%
+%========================== AUTORES =============================%
+% Eonay Barbosa Gurjão  email: eonay.web@gmail.com ==============%
+% Klenilmar Lopes Dias  email: klenilmar@gmail.com ==============%
+%================================================================% 
+%================================================================%
+%======================== Versão 2.3 ============================%
+%================================================================%
+\documentclass[12pt, % tamanho da fonte
+	%openright,	% capítulos começam em pág ímpar
+	oneside,		    % <twoside> para impressão em frente e verso
+	a4paper,			% tamanho do papel
+	english,			% Idioma adicional para hifenização
+	brazil				% Idioma principal 
+	]{abntex2}
+	
+\include{structure}  % Estrutura do Texto e Pacotes Principais
+
+% -- Informações para Capa e Folha de Rosto: ---------------
+\titulo{Práticas de ensino com matrizes}
+
+% Ferramentas educacionais que auxiliam o ensino de Matrizes nos cursos de Licenciatura em Matemática no IFAP Campi Macapá
+
+
+\autor{Eonay Barbosa Gurjão} \autorcite{Gurjão, Eonay Barbosa}
+\local{Santana} \uf{AP}
+\data{Dezembro de 2024} \ano{2024}
+\orientador{Prof. Dr. Klenilmar Lopes Dias}  % Nome do orientador 
+\ttorientador{Instituto Federal do Amapá - IFAP} % Instituição do orientador
+%\coorientador{Prof. Dr. Nome do Coorientador} % Nome do coorientador
+%\ttcoorientador{Universidade Federal de Ouro Preto} % Instituição do Coorientador
+\instituicao{Instituto Federal do Amapá - Campus Santana} \sigla{IFAP}
+\instituto{Pró-Reitoria de Extensão, Pesquisa e Inovação}
+\departamento{Mestrado Profissional em Educação Profissional e Tecnológica}
+\curso{Mestrado em Educação Profissional e Tecnológica}	
+\tipotrabalho{Dissertação}
+\grau{Mestre em Educação Profissional e Tecnológica}
+
+%------Nomes dos examinadores.  
+\examinadorum{Prof. Dr. Diego Armando Silva da Silva} \ttexaminadorum{Instituto Federal do Amapá - IFAP}
+\examinadordois{Prof. Dr. Elivaldo Serrão Custódio} \ttexaminadordois{Universidade Federal do Amapá - UNIFAP}
+%\examinadortres{Prof. Dr. Sérgio Orlando de Souza Batista} %\ttexaminadortres{Universidade Estadual do Amapá - UEAP}
+%\examinadorquatro{Prof. Dr. Membro da Banca  4} \ttexaminadorquatro{Universidade Federal de ... - XXXX}
+
+% ------------------------------------------------------
+\makeindex   
+
+\begin{document} % Início do documento
+
+\frenchspacing  % Retira espaço obsoleto entre as frases.
+
+% ----------------------------------------------------------
+% -- Elementos Pré-Textuais: -------------------------------
+\pagenumbering{roman}
+
+\imprimircapa  % Capa
+\imprimirfolhaderosto % Folha de rosto
+
+\include{pre-textuais/FichaCatalografica}
+\include{pre-textuais/FichaAprovacao} 
+\include{pre-textuais/Dedicatoria}
+\include{pre-textuais/Agradecimento}
+\include{pre-textuais/Epigrafe}
+\include{pre-textuais/Resumo}
+
+\renewcommand{\listfigurename}{Lista de figuras}
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*   % Cria a Lista de Figuras
+\cleardoublepage
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*  % Cria a lista de Tabelas
+\cleardoublepage
+
+%\renewcommand{\listalgorithmcfname}{Lista de algoritmos}
+%\pdfbookmark[0]{\listalgorithmcfname}{lof}
+%\listofalgorithmes   % Cria a lista de Tabelas
+%\cleardoublepage
+
+\include{PreTextuais/ListaSiglas}
+%\include{PreTextuais/ListaSimbolos}
+
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+
+
+
+% ----------------------------------------------------------
+% -- Capítulos do Trabalho: --------------------------------
+\pagenumbering{arabic} \setcounter{page}{1}
+\textual 
+\include{textuais/Cap1-Introducao}
+\include{textuais/Cap2-Fundamentacao}
+\include{textuais/Cap3-Metodologia}
+\include{textuais/Cap4-Resultados}
+\include{textuais/Cap5-Conclusao}
+
+
+
+% ----------------------------------------------------------
+% -- Elementos Pós-Textuais: -------------------------------
+\postextual  
+\bibliography{referencias} % Referências bibliográficas
+\include{pos-textuais/Apendice}
+\include{pos-textuais/Anexo}
+%\phantompart  \printindex  % Indice Remissivo
+% ----------------------------------------------------------
+\end{document}  % fim do documento
